@@ -34,4 +34,8 @@ public class Tableau {
 
 	@ManyToMany(mappedBy = "oeuvres")
     List<Exposition> accrochages = new LinkedList<>();
+	
+	@ManyToOne
+	private Artiste artiste;
+	
 }

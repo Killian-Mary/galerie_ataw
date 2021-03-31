@@ -31,6 +31,9 @@ public class Exposition {
 	private Galerie organisateur;
 	
 	@ManyToMany(mappedBy = "accrochages")
-	List<Exposition> oeuvres = new LinkedList<>();
+	List<Tableau> oeuvres = new LinkedList<>();
+	
+	@OneToMany(mappedBy = "lieuDeVente")
+	List<Transaction> ventes = new LinkedList<>();
 
 }
