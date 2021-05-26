@@ -1,23 +1,19 @@
 package galerie.entity;
 
-import java.util.LinkedList;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.Setter;
 import lombok.ToString;
 
-@ToString(callSuper = true) @NoArgsConstructor
-public class Artiste extends Personne {
-
-	@Column(unique = true)
-	@NonNull
-	private String biographie;
+@Getter @Setter @NoArgsConstructor @ToString
+@Entity
+public class Artiste extends Personne{
 	
-	@OneToMany(mappedBy = "titre")
-	private LinkedList<Tableau> oeuvres;
+	@Column(nullable = false, unique = false)
+	private String biographie;
 }
